@@ -1,8 +1,10 @@
 <h1 align="center">Sample Text OS</h1>
 
+<a align="center"><img src="https://raw.githubusercontent.com/Sample-Text-OS/Sample-Text-OS/main/Playbook/Executables/Web/Wallpaper/Windows/sample-text.webp" alt="Sample Text" width="1920"></a>
+
   <h1>What is it?</h1>
 
-  #### Sample Text OS is a new modification of Windows, similar to [Atlas OS](https://github.com/Atlas-OS/Atlas) and [Revi OS](https://github.com/meetrevision/playbook). Instead of being made for consumer versions of Windows, like Windows 11 Pro, it is made for Windows Server versions. The goal is to modify Windows Server to be optimized for desktop users.
+  #### Sample Text OS is a new modification of Windows, similar to [Atlas OS](https://github.com/Atlas-OS/Atlas) and [Revi OS](https://github.com/meetrevision/playbook). Instead of being made for consumer versions of Windows, like Windows 11 Pro, it is made for Windows Server versions. The goal is to modify Windows Server to be optimized for desktop users. As you can see, graphic design is my passion.
 
 
 
