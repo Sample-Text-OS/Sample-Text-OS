@@ -13,6 +13,8 @@
 
 [Windows Server 2025 Preview](https://www.microsoft.com/en-us/evalcenter/download-windows-server-2025)
 
+#### I don't intend to support older versions of Windows Server, since they have compatability issues with some software.
+
 
 <!--
 **Sample-Text-OS/Sample-Text-OS** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
