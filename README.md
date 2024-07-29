@@ -15,6 +15,10 @@
 
 #### I don't intend to support older versions of Windows Server, since they have compatability issues with some software.
 
+<h1>The goal.</h1>
+
+#### The goal is to create a very minimal, yet polished experience for desktop users. Because it's based on a stable version of Windows, it will remain reliable for many years, without worrying about an update changing your system with features that you didn't ask for. There's still a lot to implement into this playbook, and I want to make this happen!
+
 
 <!--
 **Sample-Text-OS/Sample-Text-OS** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
