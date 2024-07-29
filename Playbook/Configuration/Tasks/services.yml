@@ -1,0 +1,42 @@
+title: services
+description: Configures services
+privilege: TrustedInstaller
+actions:
+
+  # Windows Server Tweaks
+    - !service: {name: 'Audiosrv', operation: change, startup: 2}
+    - !registryValue: {path: 'HKLM\SOFTWARE\Policies\Microsoft\Windows NT\Reliability', value: 'ShutdownReasonOn', type: REG_DWORD, data: '0'}
+    - !scheduledTask: {path: '\Microsoft\Windows\Server Manager\ServerManager', operation: disable}
+
+  # Configure netsh (This disables download speed limit)
+    - !cmd:
+      command: 'netsh int tcp set global autotuninglevel=normal'
+      weight: 10
+
+  # Disable Windows Boot
+    - !cmd:
+      command: 'bcdedit / set {bootmgr} displaybootmenu no'
+      weight: 10
+    - !cmd:
+      command: 'bcdedit / set {bootmgr} timeout 0'
+      weight: 10
+
+
+  # This .cmd script also comes from Atlas OS.
+  # Set User Account Pictures
+    - !cmd:
+      exeDir: true
+      command: 'robocopy "User Account Pictures" "C:\ProgramData\Microsoft\User Account Pictures" /E /PURGE /IM /IT /NP'
+      weight: 10
+    - !run: {exe: 'PFP.cmd', exeDir: true}
+
+  # Theme Changes
+    - !registryValue: {path: 'HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced', value: 'ShowTaskViewButton', type: REG_DWORD, data: '0'}
+    - !registryValue: {path: 'HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize', value: 'SystemUsesLightTheme', type: REG_DWORD, data: '0'}
+    - !registryValue: {path: 'HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize', value: 'AppsUseLightTheme', type: REG_DWORD, data: '0'}
+    - !registryValue: {path: 'HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize', value: 'EnableTransparency', type: REG_DWORD, data: '0'}
+    
+  # Disable Mouse Acceleration
+    - !registryValue: {path: 'HKCU\Control Panel\Mouse', value: 'MouseSpeed', type: REG_DWORD, data: '0'}
+    - !registryValue: {path: 'HKCU\Control Panel\Mouse', value: 'MouseThreshold1', type: REG_DWORD, data: '0'}
+    - !registryValue: {path: 'HKCU\Control Panel\Mouse', value: 'MouseThreshold2', type: REG_DWORD, data: '0'}

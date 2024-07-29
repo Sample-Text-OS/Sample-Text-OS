@@ -1,0 +1,4 @@
+title: Custom
+tasks:
+- Tasks\services.yml
+- Tasks\appx.yml

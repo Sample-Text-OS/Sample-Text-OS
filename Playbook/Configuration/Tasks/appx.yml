@@ -1,0 +1,51 @@
+title: appx
+description: Removes APPX packages
+privilege: TrustedInstaller
+actions:
+
+# This entire .yml file is made with components from the Atlas OS playbook. I think this section deserves a rewrite at some point.
+
+# Remove Microsoft Edge
+  - !taskKill: {name: 'MicrosoftEdgeUpdate'}
+  - !taskKill: {name: 'msedge'}
+  - !taskKill: {name: 'MicrosoftEdge*'}
+  - !taskKill: {name: 'setup', pathContains: '\Edge'}
+  - !taskKill: {name: 'msedgewebview2'}
+  - !service: {name: 'edgeupdate', operation: delete}
+  - !service: {name: 'edgeupdatem', operation: delete}
+  - !service: {name: 'MicrosoftEdgeElevationService', operation: delete}
+
+  - !file: {path: 'C:\Users\Public\Desktop\Microsoft Edge.lnk'}
+  - !file: {path: 'C:\ProgramData\Microsoft\EdgeUpdate'}
+  - !file: {path: 'C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Microsoft Edge.lnk'}
+  - !file: {path: 'C:\Program Files (x86)\Microsoft'}
+
+  - !registryValue: {path: 'HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced', value: 'TaskbarMigratedBrowserPin', operation: delete}
+  - !registryKey: {path: 'HKLM\SOFTWARE\WOW6432Node\Microsoft\EdgeUpdate'}
+  - !registryKey: {path: 'HKCR\CLSID\{1FCBE96C-1697-43AF-9140-2897C7C69767}'}
+  - !registryKey: {path: 'HKCR\AppID\{1FCBE96C-1697-43AF-9140-2897C7C69767}'}
+  - !registryKey: {path: 'HKCR\Interface\{C9C2B807-7731-4F34-81B7-44FF7779522B}'}
+  - !registryKey: {path: 'HKCR\TypeLib\{C9C2B807-7731-4F34-81B7-44FF7779522B}'}
+  - !registryKey: {path: 'HKCR\MSEdgeHTM'}
+  - !registryKey: {path: 'HKCR\MSEdgePDF'}
+  - !registryKey: {path: 'HKCR\MSEdgeMHT'}
+  - !registryKey: {path: 'HKCR\AppID\{628ACE20-B77A-456F-A88D-547DB6CEEDD5}'}
+  - !registryKey: {path: 'HKLM\SOFTWARE\Clients\StartMenuInternet\Microsoft Edge'}
+  - !registryValue: {path: 'HKLM\SOFTWARE\RegisteredApplications', value: 'Microsoft Edge', operation: delete}
+  - !registryKey: {path: 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\msedge.exe'}
+  - !registryValue: {path: 'HKCR\.htm\OpenWithProgIds', value: 'MSEdgeHTM', operation: delete}
+  - !registryValue: {path: 'HKCR\.html\OpenWithProgIds', value: 'MSEdgeHTM', operation: delete}
+  - !registryValue: {path: 'HKCR\.shtml\OpenWithProgids', value: 'MSEdgeHTM', operation: delete}
+  - !registryValue: {path: 'HKCR\.svg\OpenWithProgIds', value: 'MSEdgeHTM', operation: delete}
+  - !registryValue: {path: 'HKCR\.xht\OpenWithProgIds', value: 'MSEdgeHTM', operation: delete}
+  - !registryValue: {path: 'HKCR\.xhtml\OpenWithProgIds', value: 'MSEdgeHTM', operation: delete}
+  - !registryValue: {path: 'HKCR\.webp\OpenWithProgids', value: 'MSEdgeHTM', operation: delete}
+  - !registryValue: {path: 'HKCR\.xml\OpenWithProgIds', value: 'MSEdgeHTM', operation: delete}
+  - !registryValue: {path: 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\ApplicationAssociationToasts', value: 'MSEdgeHTM_microsoft-edge', operation: delete}
+  - !registryValue: {path: 'HKLM\SOFTWARE\Microsoft\Internet Explorer\Main\EnterpriseMode', value: 'MSEdgePath', operation: delete}
+  - !registryKey: {path: 'HKCR\AppID\ie_to_edge_bho.dll'}
+  - !registryKey: {path: 'HKCR\AppID\{31575964-95F7-414B-85E4-0E9A93699E13}'}
+  - !registryKey: {path: 'HKCR\CLSID\{1FD49718-1D00-4B19-AF5F-070AF6D5D54C}'}
+  - !registryKey: {path: 'HKCR\WOW6432Node\CLSID\{1FD49718-1D00-4B19-AF5F-070AF6D5D54C}'}
+  - !registryKey: {path: 'HKCR\ie_to_edge_bho.IEToEdgeBHO'}
+  - !registryKey: {path: 'HKCR\ie_to_edge_bho.IEToEdgeBHO.1'}
