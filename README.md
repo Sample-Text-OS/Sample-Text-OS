@@ -9,11 +9,12 @@ Sample Text OS is a new modification of Windows, similar to [Atlas OS](https://g
 <h1>What it's made for.</h1>
 
 This playbook is designed to work with the 2 latest Windows Server versions:
+
 [Windows Server 2022](https://www.microsoft.com/en-us/evalcenter/download-windows-server-2022)
 
 [Windows Server 2025 Preview](https://www.microsoft.com/en-us/evalcenter/download-windows-server-2025)
 
-#### I don't intend to support older versions of Windows Server, since they have compatability issues with some software.
+I don't intend to support older versions of Windows Server, since they have compatability issues with some software.
 
 <h1>The goal.</h1>
 
