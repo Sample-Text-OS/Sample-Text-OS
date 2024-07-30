@@ -16,6 +16,10 @@ This playbook is designed to work with the 2 latest Windows Server versions:
 
 I don't intend to support older versions of Windows Server, since they have compatability issues with some software.
 
+<h1>Why Windows Server?</h1>
+
+Some of you may be wondering why I would choose Windows Server over Windows LTSC. The reason I chose Windows Server is because it's possible to buy official licenses from Microsoft, while Windows LTSC is way more difficult to license. Windows Server also gets 10 years of security updates, while LTSC gets 5 years. Because Windows Server doesn't change that much, it makes the process of maintaining the project much easier.
+
 <h1>The goal.</h1>
 
 The goal is to create a very minimal, yet polished experience for desktop users. Because it's based on a stable version of Windows, it will remain reliable for many years, without worrying about an update changing your system with features that you didn't ask for. There's still a lot to implement into this playbook, and I want to make this happen!
