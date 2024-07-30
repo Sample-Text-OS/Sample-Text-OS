@@ -3,6 +3,11 @@ description: Configures services
 privilege: TrustedInstaller
 actions:
 
+
+
+    - !cmd:
+      exeDir: true
+      command: 'robocopy "Web" "C:\Windows\Web" /E /PURGE /IM /IT /NP'
   # Windows Server Tweaks
     - !service: {name: 'Audiosrv', operation: change, startup: 2}
     - !registryValue: {path: 'HKLM\SOFTWARE\Policies\Microsoft\Windows NT\Reliability', value: 'ShutdownReasonOn', type: REG_DWORD, data: '0'}
@@ -29,6 +34,11 @@ actions:
       command: 'robocopy "User Account Pictures" "C:\ProgramData\Microsoft\User Account Pictures" /E /PURGE /IM /IT /NP'
       weight: 10
     - !run: {exe: 'PFP.cmd', exeDir: true}
+
+    - !run:
+      exeDir: true
+      exe: 'WALLPAPER.cmd'
+      weight: 20
 
   # Theme Changes
     - !registryValue: {path: 'HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced', value: 'ShowTaskViewButton', type: REG_DWORD, data: '0'}
