@@ -2,11 +2,3 @@ title: services
 description: Configures services
 privilege: TrustedInstaller
 actions:
-
-  - !powerShell:
-    weight: 50
-    runas: currentUserElevated
-    wait: true
-    exeDir: true
-    command: '.\UPDATE-APPX.ps1'
-
