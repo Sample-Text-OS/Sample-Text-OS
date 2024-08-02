@@ -1,6 +1,6 @@
 <h1 align="center">Sample Text OS</h1>
 
-<a align="center"><img src="https://github.com/Sample-Text-OS/Banner-Art/blob/main/Images/Sample-Text-OS/sample-text-1080.png" alt="Sample Text" width="1920"></a>
+<a align="center"><img src="https://github.com/Sample-Text-OS/Banner-Art/blob/main/Images/Sample-Text-OS/sample-text-enlarged.png" alt="Sample Text" width="1920"></a>
 
 <h1>What is it?</h1>
 
